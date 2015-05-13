@@ -1,9 +1,13 @@
-var React = require('react');
+var React = require('react'),
+    Button = require('./Button.jsx');
 
 var Message = React.createClass({
   render: function() {
     return (
-      <h1>Hello, {this.props.name}</h1>
+      <div>
+        <h1>Hello, {this.props.name}</h1>
+        <Button />
+      </div>
     );
   }
 });
