@@ -1,6 +1,7 @@
 var React = require('react');
 var MessageBlock = require('./MessageBlock.jsx');
 var Counter = require('./Counter.jsx');
+var List = require('./List.jsx');
 
 var Descr = React.createClass({
 	  render: function() {
@@ -9,6 +10,7 @@ var Descr = React.createClass({
 		      <h1>Hello, {this.props.data.author}</h1>
 		      <MessageBlock text={this.props.data.text}/>
 		      <Counter />
+		      <List />
 	      </div>
 	    );
 	  }

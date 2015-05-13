@@ -370,6 +370,7 @@
 	var React = __webpack_require__(4);
 	var MessageBlock = __webpack_require__(5);
 	var Counter = __webpack_require__(161);
+	var List = __webpack_require__(162);
 
 	var Descr = React.createClass({displayName: "Descr",
 		  render: function() {
@@ -377,7 +378,8 @@
 		    	React.createElement("div", null, 
 			      React.createElement("h1", null, "Hello, ", this.props.data.author), 
 			      React.createElement(MessageBlock, {text: this.props.data.text}), 
-			      React.createElement(Counter, null)
+			      React.createElement(Counter, null), 
+			      React.createElement(List, null)
 		      )
 		    );
 		  }
@@ -20496,22 +20498,49 @@
 
 	var Counter = React.createClass({displayName: "Counter",
 		getInitialState: function() {
-			return {clicked: false};
+			return {clicked: 0};
 	  },
 		handleClick: function(event) {
 			this.setState({clicked: ++this.state.clicked});
 		},
 	  render: function() {
+	  	var text = this.state.clicked || null;
 	    return (
 	    	React.createElement("div", null, 
 		      React.createElement("button", {onClick: this.handleClick}, "Click me"), 
-		      React.createElement("span", null, this.state.clicked)
+		      React.createElement("span", null, text)
 	      )
 	    );
 	  }
 	});
 
 	module.exports = Counter;
+
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(4);
+
+	var List = React.createClass({displayName: "List",
+	  render: function() {
+	  	var dataList = [
+		  	{'id': 1, 'text':'One'},
+		  	{'id': 2, 'text':'Two'},
+		  	{'id': 3, 'text':'Three'}
+	  	];
+	    return (
+	    	React.createElement("ul", null, 
+	    		dataList.map(function(res) {
+		        return React.createElement("li", null, res.text)
+		      })
+	      )
+	    );
+	  }
+	});
+
+	module.exports = List;
 
 
 /***/ }
