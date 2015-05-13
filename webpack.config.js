@@ -1,0 +1,16 @@
+module.exports = {
+  entry: {
+    app: ["./app/entry.jsx"]
+  },
+  output: {
+    path: "./build",
+    filename: "[name].bundle.js"
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx$/, loader: 'jsx-loader'
+      }
+    ]
+  }
+};
