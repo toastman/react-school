@@ -1,9 +1,9 @@
-var React = require('gulp-react');
+var React = require('react');
 
 var Message = React.createClass({
   render: function() {
     return (
-      <h1>some message</h1>
+      <h1>Hello, {this.props.name}</h1>
     );
   }
 });
