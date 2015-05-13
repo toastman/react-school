@@ -1,10 +1,13 @@
-var React = require('react'),
-    ListItem = require('./ListItem.jsx');
+var React = require('react');
 
 var List = React.createClass({
   render: function() {
     return (
-      <ListItem data={this.props.data} />
+      <ul>
+      {this.props.data.map(function(result) {
+        return <li key={result.id}>{result.text}</li>
+      })}
+      </ul>
     );
   }
 });
