@@ -20496,17 +20496,16 @@
 
 	var Counter = React.createClass({displayName: "Counter",
 		getInitialState: function() {
-			return {clicked: 0};
+			return {clicked: false};
 	  },
 		handleClick: function(event) {
 			this.setState({clicked: ++this.state.clicked});
 		},
 	  render: function() {
-	  	var text = this.state.clicked ? this.state.clicked : null;
 	    return (
 	    	React.createElement("div", null, 
 		      React.createElement("button", {onClick: this.handleClick}, "Click me"), 
-		      React.createElement("span", null, text)
+		      React.createElement("span", null, this.state.clicked)
 	      )
 	    );
 	  }
