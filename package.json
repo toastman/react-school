@@ -1,0 +1,50 @@
+{
+  "name": "react-school",
+  "version": "1.0.0",
+  "description": "Getting started with react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toastman/react-school.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toastman/react-school/issues"
+  },
+  "homepage": "https://github.com/toastman/react-school",
+  "dependencies": {
+    "babel-eslint": "^3.1.1",
+    "eslint": "^0.21.0",
+    "express": "^4.12.3",
+    "jsx-loader": "^0.13.2",
+    "node-libs-browser": "^0.5.0",
+    "react": "^0.13.3",
+    "webpack": "^1.9.5"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "ecmaFeatures": {
+      "generators": true,
+      "forOf": true,
+      "jsx": true
+    },
+    "env": {
+      "node": true,
+      "browser": true
+    },
+    "globals": {
+      "React": true
+    },
+    "rules": {
+      "quotes": [
+        0,
+        "double"
+      ],
+      "no-trailing-spaces": 1
+    }
+  }
+}
