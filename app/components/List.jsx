@@ -4,8 +4,8 @@ var List = React.createClass({
   render: function() {
     return (
       <ul>
-      {this.props.data.map(function(result) {
-        return <li key={result.id}>{result.text}</li>
+      {this.props.data.map(function(result,i) {
+        return <li key={i}>{result.text}</li>
       })}
       </ul>
     );

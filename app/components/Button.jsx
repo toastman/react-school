@@ -1,4 +1,6 @@
-var React = require('react');
+var React = require('react'),
+    Comp1 = require('./Comp1.jsx'),
+    Comp2 = require('./Comp2.jsx');
 
 var Button = React.createClass({
   incrementCount: function() {
@@ -12,8 +14,9 @@ var Button = React.createClass({
   render: function() {
     return (
       <div>
-        <p>{this.state.count}</p>
         <button onClick={this.incrementCount}>Click me</button>
+        <Comp1>Component 1: {this.state.count}</Comp1>
+        <Comp2>Component 2: {this.state.count}</Comp2>
       </div>
     );
   }
