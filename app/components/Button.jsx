@@ -15,8 +15,8 @@ var Button = React.createClass({
     return (
       <div>
         <button onClick={this.incrementCount}>Click me</button>
-        <Comp1>Component 1: {this.state.count}</Comp1>
-        <Comp2>Component 2: {this.state.count}</Comp2>
+        <Comp1 txt={this.state.count}></Comp1>
+        <Comp2 txt={this.state.count}></Comp2>
       </div>
     );
   }
