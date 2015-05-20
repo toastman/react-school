@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "express": "^4.12.3",
+    "flux": "^2.0.3",
     "gulp": "^3.8.11",
     "gulp-connect": "^2.2.0",
     "gulp-livereload": "^3.8.0",
@@ -12,7 +13,34 @@
     "jsx-loader": "^0.13.2",
     "node-libs-browser": "^0.5.0",
     "react": "^0.13.3",
+    "react-router": "^0.13.3",
     "webpack": "^1.9.5",
     "webpack-dev-server": "^1.8.2"
+  },
+  "scripts": {
+    "w": "webpack --colors --progress --watch"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "ecmaFeatures": {
+      "generators": true,
+      "forOf": true,
+      "jsx": true
+    },
+    "env": {
+      "node": true,
+      "browser": true
+    },
+    "globals": {
+      "React": true
+    },
+    "rules": {
+      "quotes": [
+        0,
+        "double"
+      ],
+      "no-underscore-dangle": 0,
+      "no-trailing-spaces": 1
+    }
   }
 }

@@ -1,6 +1,6 @@
 module.exports = {
   entry: {
-    app: ["./app/entry.jsx"]
+    app: ["./app/components/Navigation.jsx"]
   },
   output: {
     path: "./build",

@@ -2,12 +2,13 @@ var React = require('react');
 
 var List = React.createClass({
   render: function() {
+
+    var elemList = this.props.data.map(function(result,i) {
+      return <li key={i}>{result.text}</li>
+    });
+
     return (
-      <ul>
-      {this.props.data.map(function(result,i) {
-        return <li key={i}>{result.text}</li>
-      })}
-      </ul>
+      <ul>{elemList}</ul>
     );
   }
 });

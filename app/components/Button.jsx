@@ -1,22 +1,42 @@
-var React = require('react'),
-    Comp1 = require('./Comp1.jsx'),
-    Comp2 = require('./Comp2.jsx');
+"use strict";
+
+var React = require('react');
+var Actions = require("../actions/ClickActions.js");
+var Store = require("../stores/ClickStore.js");
+
+function getStateFromStores() {
+  return {
+    "clicks": Store.getAllClicks()
+  };
+}
 
 var Button = React.createClass({
-  incrementCount: function() {
-    this.setState({
-      count: this.state.count + 1
-    });
+
+  getInitialState: function () {
+    return getStateFromStores();
   },
-  getInitialState: function() {
-    return {count: 0}
+
+  componentDidMount: function() {
+    Store.addChangeListener(this._onChange);
   },
+
+  componentWillUnmount: function() {
+    Store.addChangeListener(this._onChange);
+  },
+
+  _onChange: function() {
+    this.setState(getStateFromStores());
+  },
+
+  _handleClick: function(){
+    Actions.receiveClicks({"someData": 1});
+  },
+
   render: function() {
     return (
       <div>
-        <button onClick={this.incrementCount}>Click me</button>
-        <Comp1 txt={this.state.count}></Comp1>
-        <Comp2 txt={this.state.count}></Comp2>
+        <button onClick={this._handleClick}>Fire click</button>
+        <h1>How many times user clicks: {this.state.clicks}</h1>
       </div>
     );
   }
